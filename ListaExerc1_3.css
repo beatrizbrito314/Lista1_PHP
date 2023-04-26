@@ -1,0 +1,45 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+ body{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+     text-align: center;
+ }
+
+ th{
+    font-size: 20px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: rgb(234, 150, 25);
+ }
+
+ th, td{
+    border: 2px solid rgb(234, 150, 25);
+    border-radius: 10px;
+    background-color: rgb(253, 227, 187);
+
+ }
+ table{
+     margin: auto;
+     margin-top: 200px;
+     width: 400px;
+     height: 300px;
+ }
+
+ input{
+     border-radius: 5px;
+     height: 20px;
+     width: 200px;
+
+ }
+ .button{
+     background-color: rgb(234, 150, 25);
+     height: 30px;
+     width: 70px;
+     border-radius: 5px;
+ }
+
+ .button:hover{
+    background:rgb(178, 115, 20);
+    color: #eaf1e7;
+}
