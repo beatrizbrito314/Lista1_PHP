@@ -7,15 +7,15 @@ body{
 
     table{
         margin: auto;
+        margin-top: 10ch;
         background-color:#001f29;
-        margin-top: 20ch;
         box-shadow: 1ch 1ch 2ch #00db9a;
         border-radius: 7ch;
        
     }
     td{
         padding-top: 5ch;
-        color: rgb(79, 85, 119);
+        
        
     }
     label{
@@ -32,7 +32,6 @@ body{
         border: 0ch;
         margin-right: 2ch;
       
-    
        
     }
    .bt{
@@ -53,13 +52,12 @@ body{
     padding-top: 16px;
     border-radius: 2cm;
     color: #00db9a;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
    
    }
    .msg{
     color: #ff6c17;
     text-align: center;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     padding-left: 2ch;
     font-family: fantasy;
    }

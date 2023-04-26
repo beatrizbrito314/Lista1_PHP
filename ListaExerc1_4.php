@@ -1,11 +1,11 @@
 <?php
-$peso = "";
-$altura="";
-$imc = "";
-$msg = "";
-$sexo= "";
-$alerta="";
-
+$peso = '';
+$altura='';
+$imc = '';
+$msg = '';
+$sexo= '';
+$alerta='';
+$condicao='';
 if(isset($_POST["calcular"])){
     $botao = $_POST["calcular"];
 
@@ -28,15 +28,19 @@ if(isset($_POST["calcular"])){
 
     if($sexo=="f"){
         if($imc<19.1){
-            echo("Abaixo do peso");
+            $condicao="Abaixo do peso";
         }else if ($imc>=19.1 && $imc<25.8){
-            echo("Peso normal");
+            $condicao="Peso normal";
+            
         }else if ($imc>=25.8 && $imc<27.3){
-            echo("Marginalmente acima do peso");
+            $condicao="Marginalmente acima do peso";
+         
         }else if ($imc>=27.3 && $imc<32.3){
-                echo("Acima do peso ideal");
+            $condicao="Acima do peso ideal";
+                
         }else if ($imc>=32.3){
-            echo("Obesidade");
+            $condicao="Obesidade";
+            
         }
     }
 
@@ -75,7 +79,7 @@ if(isset($_POST["calcular"])){
     <form action="ListaExerc1_4.php" method="post">
         <table>
             <tr>
-                <td colspan="2">Cálculo do IMC</td>
+                <td colspan="2" class="msg">Cálculo do IMC</td>
             </tr>
             <tr>
                 <td><label for="lb1">Informe o peso:</label></td>
@@ -94,14 +98,17 @@ if(isset($_POST["calcular"])){
                 </td>
                 </tr>
                 <tr>
-               <td colspan="2"><?php echo $alerta?> </td>
+               <td colspan="2" class="mensagens"><?php echo $alerta?> </td>
             </tr>
             <tr>
-               <td colspan="2"><?php echo $msg?> </td>
+               <td colspan="2" class="mensagens"><?php echo $msg?> </td>
                
             </tr>
             <tr>
-                <td colspan="2"> <input class = "button" type="submit" name="calcular"></td>
+               <td colspan="2" class="mensagens"><?php echo $condicao?> </td>
+            </tr>
+            <tr>
+                <td colspan="2"> <input class = "bt" type="submit" name="calcular"></td>
             </tr>
         </table>
     

@@ -1,13 +1,13 @@
 <?php
 
- $botao = "";
- $msg = "";
- $nota1 = "";
- $nota2 = "";
- $nota3 = "";
- $nota4= "";
- $media = "";
- 
+ $botao = '';
+ $msg = '';
+ $nota1 = '';
+ $nota2 = '';
+ $nota3 = '';
+ $nota4= '';
+ $media = '';
+ $alerta='';
 
  if(isset($_POST["calcular"])){
     $botao = $_POST["calcular"];
@@ -29,7 +29,7 @@
     }
 
     if($nota1 == ""|| $nota2 == "" || $nota3 == "" || $nota4 == ""){
-        echo("Preencha os campos corretamente");
+        $alerta= "Por favor, verifique se o campo está preenchido corretamente";
     } else {
         $media = ($nota1*2 + $nota2*3 + $nota3*4 + $nota4*5)/14;
         $msg = "O valor é da média ponderada é = " . $media;
@@ -46,18 +46,16 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>Cálculo da Média do IFRN</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='ListaExerc1_2.css'>
-    <script src='main.js'></script>
+   
+    <link rel="stylesheet" href="ListaExerc1_5.css">
 </head>
 <body>
     <form action="ListaExerc1_2.php" method="post">
 
     <table>
+       
         <tr>
-            <th colspan="2">Mensagens: <?php echo $msg?> </th>
-        </tr>
-        <tr>
-            <th colspan="2">Cálculo da Média Ponderada</th>
+            <th colspan="2" class="msg">Cálculo da Média Ponderada</th>
         </tr>
         <tr>
             <td><label for="lb1">Nota 1:</label></td>
@@ -76,7 +74,13 @@
             <td><input type="text" name="nota4"></td>
         </tr>
         <tr>
-            <td colspan="2"> <input class = "button" type="submit" name="calcular"></td>
+            <th colspan="2" class="mensagens"><?php echo $alerta?> </th>
+        </tr>
+        <tr>
+            <th colspan="2" class="mensagens"><?php echo $msg?> </th>
+        </tr>
+        <tr>
+            <td colspan="2"> <input class = "bt" type="submit" name="calcular"></td>
         </tr>
     </table>
 

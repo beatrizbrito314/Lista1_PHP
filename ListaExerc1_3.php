@@ -1,9 +1,10 @@
 <?php
-$peso = "";
-$altura = "";
-$imc = "";
-$msg = "";
-
+$peso ='';
+$altura = '';
+$imc = '';
+$msg = '';
+$alerta='';
+$condicao='';
 
 
 if(isset($_POST["calcular"])){
@@ -17,26 +18,21 @@ if(isset($_POST["calcular"])){
         $altura = $_POST ["altura"];
     }
 
-    if($peso== "" || $altura=="" ){
-        echo ("<script> alert('Preencha todos os campos corretamente'); </script> ");}
+    if($peso== "" || $altura=="" || !is_numeric($peso) || !is_numeric($altura) ){
+        $alerta= "Por favor, verifique se o campo está preenchido corretamente";}
     else{
-
-        if (!is_numeric($peso) || (!is_numeric($altura))){
-            echo "As variáveis precisam ser números";
-    
-        } else{
 
     $imc = $peso/($altura*$altura);
     
 
     if($imc<18.5){
-        echo("Abaixo do peso");
+        $condicao="Abaixo do peso";
     }else if ($imc>=18.5 && $imc<25){
-        echo("Peso normal");
+        $condicao="Peso normal";
     }else if ($imc>=25 && $imc<30){
-        echo("Acima do peso");
+        $condicao="Acima do peso";
     }else if ($imc>=30){
-        echo("Obeso");
+        $condicao="Obesidade";
     }
 
     
@@ -44,7 +40,7 @@ if(isset($_POST["calcular"])){
     $msg = "O valor da IMC é = " . number_format($imc, 2);
     }
     }
-}
+
 
 ?>
 
@@ -56,16 +52,15 @@ if(isset($_POST["calcular"])){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel='stylesheet' type='text/css' media='screen' href='ListaExerc1_3.css'>
     <title>Cálculo IMC</title>
+
+    <link rel="stylesheet" href="ListaExerc1_5.css">
 </head>
 <body>
     <form action="ListaExerc1_3.php" method="post">
         <table>
+          
             <tr>
-               <th colspan="2">MENSAGENS: <?php echo $msg?> </th>
-               
-            </tr>
-            <tr>
-                <th colspan="2">Cálculo do IMC</th>
+                <th colspan="2" class="msg">Cálculo do IMC</th>
             </tr>
             <tr>
                 <td><label for="lb1">Digite o peso:</label></td>
@@ -76,8 +71,19 @@ if(isset($_POST["calcular"])){
                 <td><input type="text" name="altura"></td>
             </tr>
             <tr>
-                <td colspan="2"> <input class = "button" type="submit" name="calcular"></td>
+            <td colspan="2" class="mensagens"><?php echo $alerta?> </td>
             </tr>
+            <tr>
+               <td colspan="2" class="mensagens"><?php echo $msg?> </td>
+               
+            </tr>
+            <tr>
+               <td colspan="2" class="mensagens"><?php echo $condicao?> </td>
+            </tr>
+            <tr>
+                <td colspan="2"> <input class = "bt" type="submit" name="calcular"></td>
+            </tr>
+
         </table>
     
         </form>
