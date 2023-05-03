@@ -2,36 +2,38 @@
 
 
 body{
-    background-color:#001f29;}
+    background-image: url(https://cdn.pixabay.com/photo/2022/06/20/14/20/space-7273891_1280.jpg) ;}
 
 
     table{
         margin: auto;
         margin-top: 10ch;
-        background-color:#001f29;
-        box-shadow: 1ch 1ch 2ch #00db9a;
+        background-color:#000000;
+        opacity: 0.85;  
         border-radius: 7ch;
-       
     }
     td{
         padding-top: 5ch;
-        
-       
     }
     label{
-      color: #ff6c17;
+      color: #276bc4;
       margin-right: 10ch;
-      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
       padding-left: 2ch;
-      font-family: fantasy;
+      line-height: 0.5;
+      font-family:Impact;
+      font-size: larger;
+      font-style:inherit;
+      
+
+     
+      
     }
     input{
-       
-        background-color: #efeeee;
+        background-color: #ffffff;
         border-radius: 10ch;
         border: 0ch;
         margin-right: 2ch;
-      
+        opacity: 1;
        
     }
    .bt{
@@ -40,24 +42,27 @@ body{
        width: 15ch;
        height: 8ch;
        background-color: #efeeee;
-       color: #f18745;
-       box-shadow: 1ch 1ch 2ch #00db9a;
+       color: #010e1a;
+     
        font-family: fantasy;
    }
    .mensagens{
-    padding-left: 2ch;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    width: 25px;
-    height: 5px;
-    padding-top: 16px;
-    border-radius: 2cm;
-    color: #00db9a;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: Impact;
+     text-align: center;
+     color: #85c4ff;
+     font-size: larger;
+    
    
    }
    .msg{
-    color: #ff6c17;
+    color: #ffffff;
     text-align: center;
-    padding-left: 2ch;
     font-family: fantasy;
+    border-radius: 6ch;
+    width: 30ch;
+  
+    margin: auto;
+   }
+   .icon{
+    width: 20%;
    }

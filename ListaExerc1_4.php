@@ -5,6 +5,7 @@ $imc = '';
 $msg = '';
 $sexo= '';
 $alerta='';
+$alerta2='';
 $condicao='';
 if(isset($_POST["calcular"])){
     $botao = $_POST["calcular"];
@@ -20,8 +21,12 @@ if(isset($_POST["calcular"])){
         $sexo = $_POST ["sexo"];
     }
 
-    if($peso== "" || $altura=="" || $sexo ==""){
-        $alerta= "Por favor, verifique se o campo está preenchido corretamente";}
+    if (empty($_POST["peso"]) || empty($_POST["altura"])) {
+        $alerta = "Preencha todos os campos corretamente";}
+    
+    //Verificar se o campos é letra
+    elseif (!is_numeric($peso) || (!is_numeric($altura))){
+        $alerta2 = "Os campos devem ser preenchidos com números";}
     else{
 
     $imc = $peso/($altura*$altura);
@@ -77,6 +82,16 @@ if(isset($_POST["calcular"])){
 </head>
 <body>
     <form action="ListaExerc1_4.php" method="post">
+
+           <!--Div para alertas de erro-->
+<div class= "container-fluid msg"> 
+    <img src="https://img.icons8.com/?size=512&id=EggHJUeUuU6C&format=png" alt="" class=icon>
+<br> 
+<?php echo $alerta?>
+<br>
+<?php echo $alerta2?>
+</div>
+
         <table>
             <tr>
                 <td colspan="2" class="msg">Cálculo do IMC</td>
@@ -97,9 +112,7 @@ if(isset($_POST["calcular"])){
                         <label for="m"> M </label>
                 </td>
                 </tr>
-                <tr>
-               <td colspan="2" class="mensagens"><?php echo $alerta?> </td>
-            </tr>
+              
             <tr>
                <td colspan="2" class="mensagens"><?php echo $msg?> </td>
                

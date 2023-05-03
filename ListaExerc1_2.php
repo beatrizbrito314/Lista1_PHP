@@ -8,6 +8,7 @@
  $nota4= '';
  $media = '';
  $alerta='';
+ $alerta2='';
 
  if(isset($_POST["calcular"])){
     $botao = $_POST["calcular"];
@@ -28,15 +29,21 @@
         $nota4 = $_POST ["nota4"];
     }
 
-    if($nota1 == ""|| $nota2 == "" || $nota3 == "" || $nota4 == ""){
-        $alerta= "Por favor, verifique se o campo está preenchido corretamente";
-    } else {
+    //Verificar se o campos está preenchido
+    if (empty($_POST["nota1"]) || empty($_POST["nota2"]) || empty($_POST["nota3"]) || empty($_POST["nota4"])) {
+        $alerta = "Preencha todos os campos corretamente";}
+
+//Verificar se o campos é letra
+    elseif (!is_numeric($nota1) || (!is_numeric($nota2)) || (!is_numeric($nota3)) || (!is_numeric($nota4))){
+        $alerta2 = "Os campos devem ser preenchidos com números";}
+
+     else {
         $media = ($nota1*2 + $nota2*3 + $nota3*4 + $nota4*5)/14;
-        $msg = "O valor é da média ponderada é = " . $media;
-    }
+        $msg= "O valor é da média ponderada é = ". $media;
+    }}
 
 
- }
+ 
 
 ?>
 <!DOCTYPE html>
@@ -52,12 +59,18 @@
 <body>
     <form action="ListaExerc1_2.php" method="post">
 
+
+<!--Div para alertas de erro-->
+<div class= "container-fluid msg"> 
+    <img src="https://img.icons8.com/?size=512&id=EggHJUeUuU6C&format=png" alt="" class=icon>
+<br> 
+<?php echo $alerta?>
+<br>
+<?php echo $alerta2?>
+</div>
+
     <table>
        
-        <tr>
-            <th colspan="2" class="msg">Cálculo da Média Ponderada</th>
-        </tr>
-        <tr>
             <td><label for="lb1">Nota 1:</label></td>
             <td><input type="text" name="nota1"></td>
         </tr>
@@ -74,10 +87,7 @@
             <td><input type="text" name="nota4"></td>
         </tr>
         <tr>
-            <th colspan="2" class="mensagens"><?php echo $alerta?> </th>
-        </tr>
-        <tr>
-            <th colspan="2" class="mensagens"><?php echo $msg?> </th>
+            <td colspan="2" class="mensagens"> <?php echo $msg?> </td>
         </tr>
         <tr>
             <td colspan="2"> <input class = "bt" type="submit" name="calcular"></td>
