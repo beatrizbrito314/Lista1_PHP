@@ -51,15 +51,15 @@ if(isset($_POST["calcular"])){
 
     if($sexo=="m"){
         if($imc<20.7){
-            echo("Abaixo do peso");
+            $condicao="Abaixo do peso";
         }else if ($imc>=20.7 && $imc<26.4){
-            echo("Peso normal");
+            $condicao="Peso normal";
         }else if ($imc>=26.4 && $imc<27.8){
-            echo("Marginalmente acima do peso");
+            $condicao="Marginalmente acima do peso";
         }else if ($imc>=27.8 && $imc<31.1){
-                echo("Acima do peso ideal");
+            $condicao="Acima do peso ideal";
         }else if ($imc>=31.1){
-            echo("Obesesidade");
+            $condicao="Obesidade";
         }
     }
 

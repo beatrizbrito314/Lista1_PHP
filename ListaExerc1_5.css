@@ -16,8 +16,14 @@ body{
         padding-top: 5ch;
     }
     label{
+<<<<<<< HEAD
       color: #276bc4;
       margin-right: 10ch;
+=======
+      color: #ff6c17;
+      margin-right: 5ch;
+      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+>>>>>>> d96c55932baf46d57cb3cb3bdff79a09c9627865
       padding-left: 2ch;
       line-height: 0.5;
       font-family:Impact;
@@ -32,8 +38,13 @@ body{
         background-color: #ffffff;
         border-radius: 10ch;
         border: 0ch;
+<<<<<<< HEAD
         margin-right: 2ch;
         opacity: 1;
+=======
+        margin-right: 3ch;
+      
+>>>>>>> d96c55932baf46d57cb3cb3bdff79a09c9627865
        
     }
    .bt{
@@ -45,6 +56,7 @@ body{
        color: #010e1a;
      
        font-family: fantasy;
+       
    }
    .mensagens{
     font-family: Impact;
