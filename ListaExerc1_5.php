@@ -13,6 +13,7 @@ $msg3='';
 $msg4='';
 $msg5='';
 $alerta='';
+$alerta2='';
 
 if(isset($_POST["calcular"])) {
     $botao = $_POST["calcular"]; 
@@ -21,7 +22,13 @@ if(isset($_POST["calcular"])) {
     if(isset($_POST["valor"])){
         $valor = $_POST["valor"];
     }
-    if($valor== "" || !is_numeric($valor) ){   $alerta= "Por favor, verifique se o campo está preenchido corretamente";}
+    //Verificar se o campos está preenchido
+    if (empty($_POST["valor"])) {
+        $alerta = "Preencha todos os campos corretamente";}
+    
+    //Verificar se o campos é letra
+    elseif (!is_numeric($valor)){
+        $alerta2 = "Os campos devem ser preenchidos com números";}
             else{
 
                 
@@ -96,6 +103,14 @@ $msg="Valor informado R$".$valor;}}
 <body>
 <form action="ListaExerc1_5.php" method="post">
 
+           <!--Div para alertas de erro-->
+           <div class= "container-fluid msg"> 
+    <img src="https://img.icons8.com/?size=512&id=EggHJUeUuU6C&format=png" alt="" class=icon>
+<br> 
+<?php echo $alerta?>
+<br>
+<?php echo $alerta2?>
+</div>
 <table>
         <tr>
             <td><label for="lb1" >Informe o valor em reais: </td>
@@ -116,9 +131,7 @@ $msg="Valor informado R$".$valor;}}
         <tr>
             <td colspan="2" class="mensagens"><?php echo $msg5; ?></td>
         </tr>
-        <tr>
-            <td colspan="2" class="mensagens"><?php echo $alerta; ?></td>
-        </tr>
+
         <tr>
             <td colspan="2" class="msg" ><?php echo $msg; ?></td>
         </tr>

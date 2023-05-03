@@ -8,10 +8,7 @@ $x2='';
 $delta='';
 $alerta='';
 $alerta2='';
-<<<<<<< HEAD
 $alerta3='';
-=======
->>>>>>> d96c55932baf46d57cb3cb3bdff79a09c9627865
 $msg1='';
 $msg2='';
 
@@ -27,7 +24,6 @@ if(isset($_POST["calcular"])){
     if(isset($_POST["c"])){
         $c= $_POST ["c"];
     
-<<<<<<< HEAD
 //Verificar se o campos está preenchido
         if (empty($_POST["a"]) || empty($_POST["b"]) || empty($_POST["c"])) {
             $alerta = "Preencha todos os campos corretamente";}
@@ -43,20 +39,10 @@ if(isset($_POST["calcular"])){
             $alerta3= "Delta não pode ser um número negativo";
         }else{
 //achar valores de x1 e x2
-=======
-
-    if($a== ""|| !is_numeric($a) || $b== ""|| !is_numeric($b) || $c== ""|| !is_numeric($c)){
-        $alerta= "Por favor, verifique se os campos estão preenchidos corretamente";}
-    else{
-        $delta = ($b*$b)-((4*$a)*$c);}
-        if($delta<0){
-            $alerta2= "Delta não pode ser um número negativo";
-        }else{
->>>>>>> d96c55932baf46d57cb3cb3bdff79a09c9627865
             $x1= (($b*-1) + sqrt($delta))/2;
             $x2= (($b*-1) - sqrt($delta))/2; 
-            $msg1= "O valor de X1 é" .$x1;
-            $msg2= "O valor de X2 é" .$x2;
+            $msg1= "O valor de X1 é " .$x1;
+            $msg2= "O valor de X2 é " .$x2;
 
         }}}
 ?>
@@ -67,23 +53,14 @@ if(isset($_POST["calcular"])){
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<<<<<<< HEAD
     <title>Cálculo da formula de bhaskara</title>
 
     <link rel="stylesheet" href="ListaExerc1_5.css">
 
-=======
-    <title>Cálculo da formula de bashakara</title>
-
-    <link rel="stylesheet" href="ListaExerc1_5.css">
-
-
->>>>>>> d96c55932baf46d57cb3cb3bdff79a09c9627865
 </head>
 <body>
 <form action="ListaExerc1_1.php" method="post">
 
-<<<<<<< HEAD
 <!--Div para alertas de erro-->
 <div class= "container-fluid msg"> 
     <img src="https://img.icons8.com/?size=512&id=EggHJUeUuU6C&format=png" alt="" class=icon>
@@ -96,9 +73,6 @@ if(isset($_POST["calcular"])){
 
 <table>
 
-=======
-<table>
->>>>>>> d96c55932baf46d57cb3cb3bdff79a09c9627865
         <tr>
             <td><label for="lb1" >Informe o valor de a: </td>
             <td><input type="text" name="a"> </td>
@@ -111,7 +85,6 @@ if(isset($_POST["calcular"])){
             <td><label for="lb3" >Informe o valor de c: </td>
             <td><input type="text" name="c"> </td>
         </tr>
-<<<<<<< HEAD
 
 
 
@@ -127,20 +100,6 @@ if(isset($_POST["calcular"])){
         </tr>
         </div>
    
-=======
-        <tr>
-            <td colspan="2" class="mensagens"><?php echo $msg1; ?></td>
-            <tr>
-            <td colspan="2" class="mensagens"><?php echo $msg2; ?></td>
-        </tr>
-        <tr>
-            <td colspan="2" class="mensagens"><?php echo $alerta; ?></td>
-        </tr>
-        <tr>
-            <td colspan="2" class="mensagens"><?php echo $alerta2; ?></td>
-        </tr>
-        
->>>>>>> d96c55932baf46d57cb3cb3bdff79a09c9627865
         <tr>
             <td colspan="2" ><input type="submit" name="calcular" class="bt"> </td>
         </tr>
